@@ -25,13 +25,23 @@ console.log(getWithModel("kaara"));
 console.log("########### x ##########");
 console.log(getWithModel("x"));
 
+// function getWithLicence(licence) {
+//   for (let car of cars) {
+//     if (car.licence.toUpperCase() === licence.toUpperCase()) {
+//       return car;
+//     }
+//   }
+//   return null;
+// }
+
 function getWithLicence(licence) {
+  let carWithLicence = [];
   for (let car of cars) {
     if (car.licence.toUpperCase() === licence.toUpperCase()) {
-      return car;
+      carWithLicence.push(car);
     }
   }
-  return null;
+  return carWithLicence;
 }
 
 let foundCar = getWithLicence("ABC-1");
