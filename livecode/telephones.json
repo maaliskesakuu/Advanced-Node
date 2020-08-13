@@ -1,0 +1,34 @@
+[
+  {
+    "firstname": "Leila",
+    "lastname": "Hökki",
+    "phones": [
+      { "type": "home", "number": "12345678" },
+      { "type": "work", "number": "87654321" },
+      { "type": "mobile", "number": "05040302" }
+    ]
+  },
+  {
+    "firstname": "Matt",
+    "lastname": "River",
+    "phones": [
+      { "type": "home", "number": "56834923" },
+      { "type": "work", "number": "32121367" }
+    ]
+  },
+  {
+    "firstname": "James",
+    "lastname": "Bond",
+    "phones": [
+      {
+        "type": "work",
+        "number": "77777777"
+      },
+      {
+        "type": "work",
+        "number": "007"
+      },
+      { "type": "mobile", "number": "05077777" }
+    ]
+  }
+]
