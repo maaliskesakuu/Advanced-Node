@@ -5,7 +5,7 @@ const {
   getNumbersByType,
   getAllNumbersByType,
   getAllNumbers,
-  getName
+  getName,
 } = require("./telephones");
 
 console.log(getTypes());
@@ -25,4 +25,4 @@ console.log(getAllNumbers());
 
 console.log(JSON.stringify(getAllNumbers()));
 
-console.log(getName('56834923'))
+console.log(getName("56834923"));
