@@ -49,34 +49,34 @@ function createWebPage(searchResult) {
         <body>
           <h1>Search results</h1>`;
 
-    if (searchResult.length === 0) {
-      message += "<p>No persons found</p>";
-    } else {
-      message += `
+  if (searchResult.length === 0) {
+    message += "<p>No persons found</p>";
+  } else {
+    message += `
         <table>
           <thead>
             <tr>
               <th>First name</th>
               <th>Last name</th>
-              <th>Age </th>
+              <th>Age</th>
             </tr>
           </thead>
         <tbody>`;
 
-      for (let person of searchResult) {
-        message += `
+    for (let person of searchResult) {
+      message += `
           <tr>
             <td>${person.firstname}</td>
             <td>${person.lastname}</td>
             <td>${person.age}</td>
           </tr>\n`;
-      }
+    }
 
-      message += `
+    message += `
         </tbody>
       </table>
     </body>
   </html>`;
   }
   return message;
-};
+}
