@@ -13,7 +13,7 @@ const { read, send, sendJson, sendError, isIn } = require(path.join(
   "fileHandler.js"
 ));
 
-const resourceRoutes = ["/favicon", "/styles", "/js", "/images"];
+const resourceRoutes = ["/favicon", "/styles/", "/js/", "/images/"];
 const homePath = path.join(__dirname, "home.html");
 const jsonPath = path.join(__dirname, "iceCream.json");
 
