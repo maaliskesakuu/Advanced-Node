@@ -10,6 +10,7 @@
     iceCreamList = document.getElementById("iceCreamList");
     resultArea = document.getElementById("resultarea");
     try {
+      //with same resource serving it is enough with fetch('/all)
       const flavors = await fetch("/all").then(result => result.json());
       // or
       // const data = await fetch('/all');

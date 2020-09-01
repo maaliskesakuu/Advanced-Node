@@ -13,5 +13,9 @@
     "name": "Blueberry",
     "price": 3,
     "image": "blueberry.png"
+  },
+  "banana": {
+    "name": "Banana",
+    "price": 3
   }
 }
