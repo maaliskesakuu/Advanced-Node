@@ -12,6 +12,7 @@ module.exports = baseDir => {
   // const menupath = path.join(baseDir, "webPages", "menu.html");
   const menuPath = path.join(baseDir, config.WEBPAGES, config.MENU);
   const errPath = path.join(baseDir, config.WEBPAGES, "errorPage.html");
+  const formPath = path.join(baseDir, config.WEBPAGES, "form.html");
 
   const resourcePaths = ["/favicon", "/styles/", "/images/", "/js/"];
   const webPagePaths = [`/${config.WEBPAGES}/`];
@@ -24,7 +25,14 @@ module.exports = baseDir => {
         send(res, result);
       } else if (route === "getAll") {
         sendJson(res, get());
-      } else if (isIn(route, ...webPagePaths, ...resourcePaths)){
+      } else if (route === "/form") {
+        let result = await read(formPath);
+        // console.log(result);
+        result.fileData = result.fileData.replace("**MODEL**", "");
+        result.fileData = result.fileData.replace("**LICENCE**", "");
+        // console.log(result.fileData);
+        send(res, result);
+      } else if (isIn(route, ...webPagePaths, ...resourcePaths)) {
         const result = await read(path.join(baseDir, route));
         send(res, result);
       } else if (route === "/error") {

@@ -14,6 +14,7 @@
     try {
       const result = await fetch("/urlencoded", {
         method: "POST",
+        //key and value pair, if many pairs use &
         body: `licence=${searchCriterion.value}`,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
