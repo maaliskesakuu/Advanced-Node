@@ -23,7 +23,7 @@ module.exports = baseDir => {
       if (route === "/") {
         const result = await read(menuPath);
         send(res, result);
-      } else if (route === "getAll") {
+      } else if (route === "/getAll") {
         sendJson(res, get());
       } else if (route === "/form") {
         let result = await read(formPath);

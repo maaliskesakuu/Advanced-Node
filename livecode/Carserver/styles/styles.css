@@ -1,15 +1,52 @@
-h1 {
-  color: crimson;
-  margin: 0.5rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+body {
+  background-color: linen;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+h1.error {
+  color: red;
+}
+
+main,
+#search,
+#resultarea {
   display: grid;
+  justify-items: center;
+}
+
+#resultarea {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+input,
+label, select {
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 11.5rem;
 }
 
 button {
-  padding: 1rem;
+  padding: 0.8rem;
   margin: 0.5rem;
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  box-shadow: 0 0.1rem 0.3rem #f4f4f4;
+  border-radius: 5px;
+  width: 16rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
 }
