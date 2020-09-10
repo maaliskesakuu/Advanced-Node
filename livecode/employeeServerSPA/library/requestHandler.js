@@ -1,3 +1,4 @@
+"use strict";
 
 const send = (res, resource) => {
   res.writeHead(200, {
@@ -51,4 +52,13 @@ const getPostData = (req, contentType) =>
 const redirectError = (res, message) => {
   res.writeHead(303, { Location: `/error?message=${message}` });
   res.end();
+};
+
+module.exports = {
+  send,
+  sendJson,
+  sendError,
+  isIn,
+  getPostData,
+  redirectError,
 };

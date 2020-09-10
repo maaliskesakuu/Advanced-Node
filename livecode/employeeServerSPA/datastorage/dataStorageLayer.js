@@ -23,7 +23,7 @@ module.exports = class Datastorage {
       const data = await read(storageFile);
       this.storage = JSON.parse(data.fileData);
     } catch (err) {
-      // writeLog(err.message)
+      writeLog(err.message)
     }
   }
 
@@ -38,7 +38,7 @@ module.exports = class Datastorage {
         }
       );
     } catch (err) {
-      // writeLog(err.message)
+      writeLog(err.message)
     }
   }
 
@@ -49,6 +49,36 @@ module.exports = class Datastorage {
       }
     }
     return [];
+  }
+
+  addToStorage(employee) {
+    const result = this.getFromStorage(+employee.employeeId);
+    if (result.length === 0) {
+      this.storage.push(employee);
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  deleteFromStorage(id) {
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i].employeeId == +id) {
+        this.storage.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  updateStorage(employee) {
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i].employeeId == +employee.employeeId) {
+		  Object.assign(this.storage[i], employee);
+		  return true;
+      }
+	}
+	  return false;
   }
 
   //"public" API
@@ -67,6 +97,42 @@ module.exports = class Datastorage {
         resolve(result);
       } else {
         resolve({ message: "not found" });
+      }
+    });
+  }
+
+  insert(employee) {
+    return new Promise(async resolve => {
+      await this.readStorage();
+      if (this.addToStorage(employee)) {
+        await this.writeStorage();
+        resolve({ message: "insert OK" });
+      } else {
+        resolve({ message: "already in use" });
+      }
+    });
+  }
+
+  remove(employeeId) {
+    return new Promise(async resolve => {
+      await this.readStorage();
+      if (this.deleteFromStorage(employeeId)) {
+        await this.writeStorage();
+        resolve({ message: "delete OK" });
+      } else {
+        resolve({ message: "Not deleted" });
+      }
+    });
+  }
+
+  update(employee) {
+    return new Promise(async resolve => {
+      await this.readStorage();
+      if (this.updateStorage(employee)) {
+        await this.writeStorage();
+        resolve({ message: "update OK" });
+      } else {
+        resolve({ message: "Not updated" });
       }
     });
   }
