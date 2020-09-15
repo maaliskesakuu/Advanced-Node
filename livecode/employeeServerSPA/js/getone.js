@@ -48,9 +48,9 @@
   function updateEmployeeData(employee) {
     resultarea.innerHTML = `
       <p>EmployeeId: ${employee.employeeId}</p>
-      <p>EmployeeId: ${employee.firstname}</p>
-      <p>EmployeeId: ${employee.lastname}</p>
-      <p>EmployeeId: ${employee.department}</p>
-      <p>EmployeeId: ${employee.salary}</p>`;
+      <p>First name: ${employee.firstname}</p>
+      <p>Last name: ${employee.lastname}</p>
+      <p>Department: ${employee.department}</p>
+      <p>Salary: ${employee.salary}</p>`;
   }
 })();

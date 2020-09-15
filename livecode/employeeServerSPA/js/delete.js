@@ -6,7 +6,6 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
-    resultarea = document.getElementById("resultarea");
     input = document.getElementById("employeeId");
     document.getElementById("submit").addEventListener("click", submit);
   }

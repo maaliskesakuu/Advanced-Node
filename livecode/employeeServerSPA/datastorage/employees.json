@@ -19,5 +19,26 @@
         "lastname": "Stormyx",
         "department": "secrx",
         "salary": 8888.99
+    },
+    {
+        "employeeId": 4,
+        "firstname": "tee",
+        "lastname": "tee",
+        "department": "other",
+        "salary": 200
+    },
+    {
+        "employeeId": 5,
+        "firstname": "test",
+        "lastname": "test",
+        "department": "testing",
+        "salary": 0
+    },
+    {
+        "employeeId": 6,
+        "firstname": "yyy",
+        "lastname": "oooo",
+        "department": "other",
+        "salary": 3000
     }
 ]

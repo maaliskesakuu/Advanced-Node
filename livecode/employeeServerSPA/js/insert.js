@@ -21,7 +21,6 @@
 
   async function submit() {
     clearMessage();
-    //   const employeeId = +employeeIdField.value;
     const employee = {
       employeeId: +employeeIdField.value,
       firstname: firstnameField.value,
