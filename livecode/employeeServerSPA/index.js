@@ -26,6 +26,10 @@ const handleGetRequests = require("./routeHandlers/routeHandlerGet")(
   __dirname,
   dataStorage
 );
+const handlePostRequest = require("./routeHandlers/routeHandlerPost")(
+  __dirname,
+  dataStorage
+);
 
 const server = http.createServer(async (req, res) => {
   try {
@@ -33,9 +37,9 @@ const server = http.createServer(async (req, res) => {
       case "GET":
         handleGetRequests(req, res);
         break;
-      // case "POST":
-      //   handlePostRequest(req, res);
-      //   break;
+      case "POST":
+        handlePostRequest(req, res);
+        break;
       default:
         writeLog("Method not in use");
         res.end();

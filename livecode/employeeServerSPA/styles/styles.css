@@ -40,3 +40,12 @@ button {
   background-color: brown;
   color: white;
 }
+
+input[readonly] {
+  background-color: wheat;
+}
+
+#inputData {
+  display: grid;
+  justify-items: left;
+}
